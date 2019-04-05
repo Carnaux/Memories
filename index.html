@@ -14,21 +14,24 @@
 <body>
     <div id="pureFullPage">
         <div class="page" class="row">
-            <div class="col ">
-                    <div id="title" class="row justify-content-center">Memories</div>
-                    <div id="description" class="row"></div>
-                   
+            <div class="col">
+                    <div id="title" class="row justify-content-center">
+                        <p id="titleText">Memorias</p>
+                        <p id="letterE" style="display: none">e</p>
+                    </div>
+                    <div id="description" class="row justify-content-center"><p id="textDescription" class="text-center" style="font-size: 30px;">Desenhei a arquitetura das casas da minha infancia a mão<br> baseado somente em lembranças e a partir disso criei os modelos 3D.</p></div>
             </div>
-            <button id="beginBT" class="row" onclick="Down()">Begin</button>
-            <img id="br" src="assets/icons/brazil.svg">
+            <button id="beginBT" class="row" onclick="Down()">Começar</button>
+            <img id="br" src="assets/icons/brazil.svg" onclick="changeLan('1')">
+            <img id="en" src="assets/icons/english.svg" onclick="changeLan('2')">
         </div>
-        <div class="page">
-          <p>Page 2</p>
-          <div id="renderDiv2"></div>
+        <div class="page" class="row">
+          <img id="img1" src="assets/imgs/casa1.jpg" alt="" class="col">
+          <div id="renderDiv2" class="col"></div>
         </div>
-        <div class="page">
-          <p>Page 3</p>
-          <div id="renderDiv3"></div>
+        <div class="page" class="row">
+            <img id="img2" src="assets/imgs/casa2.jpg" alt="" class="col">
+          <div id="renderDiv3" class="col"></div>
         </div>
     </div>
 

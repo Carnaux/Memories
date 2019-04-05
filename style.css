@@ -22,10 +22,27 @@
 
 
   /* page 1 */
-  #title{
+ #letterE{
   
-    font-size: 100px;
+    font-size: 130px;
     font-family: 'Reenie Beanie', cursive;
+  }
+  #titleText{
+    font-size: 130px;
+    font-family: 'Reenie Beanie', cursive;
+  }
+
+  #titleText span{
+    text-decoration: line-through;
+  }
+
+  #letraE{
+    display: none;
+  }
+
+  #description{
+    font-family: 'Caveat Brush', cursive;
+    
   }
 
   #beginBT{
@@ -61,10 +78,26 @@
     background: url('assets/icons/brazilcol.svg');
   }
 
-  /* renderers */
-  #renderDiv2{
-    pointer-events: none;
+  #en{
+    position: absolute;
+    top: 0;
+    right: 50px;
+    background: url('assets/icons/english.svg');
   }
-  #renderDiv2:hover{
-    pointer-events: all;
+
+  #en:hover{
+    background: url('assets/icons/englishCol.svg');
+  }
+
+  /* renderers */
+
+  /* imgs */
+
+  #img1{
+    width: 90px;
+    height: 250px;
+  }
+  #img2{
+    width: 70px;
+    height: 250px;
   }
