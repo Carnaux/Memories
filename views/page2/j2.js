@@ -15,7 +15,8 @@ renderDiv2.appendChild( renderer2.domElement );
 // line.material.linewidth = 5;
 // cube.add( line );
 
-camera2.position.z = 8;
+camera2.position.z = -8;
+camera2.lookAt(0,0,0);
 
 var light = new THREE.AmbientLight( new THREE.Color('rgb(255,255,255)'), 0.2 ); // soft white light
 scene2.add( light );

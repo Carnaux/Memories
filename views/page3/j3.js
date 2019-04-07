@@ -6,15 +6,6 @@ renderer3.setSize( 500, 400 );
 let renderDiv3 = document.getElementById("renderDiv3");
 renderDiv3.appendChild( renderer3.domElement );
 
-var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-var material = new THREE.MeshBasicMaterial( { color: new THREE.Color('rgb(219,219,219)'), transparent: true, opacity: 0.6 } );
-var cube2 = new THREE.Mesh( geometry, material );
-scene3.add( cube2 );
-var edges3 = new THREE.EdgesGeometry( geometry );
-var line3 = new THREE.LineSegments( edges3, new THREE.LineBasicMaterial( { color: new THREE.Color('rgb(0,0,0)') } ) );
-line3.material.linewidth = 5;
-cube2.add( line3 );
-
 camera3.position.z = 5;
 
 var controls3 = new THREE.OrbitControls( camera3 );
@@ -60,6 +51,38 @@ var cubeMaterials2 = [
 var cubeMaterial2 = new THREE.MeshFaceMaterial(cubeMaterials2);
 var mesh2 = new THREE.Mesh(sky2, cubeMaterial2);
 scene3.add(mesh2);
+
+var mtlLoader2 = new THREE.MTLLoader();
+mtlLoader2.setPath( 'assets/models/' );
+var url = "house2.mtl";
+mtlLoader2.load( url, function( materials ) {
+
+    materials.preload();
+
+    var objLoader2 = new THREE.OBJLoader();
+    objLoader2.setMaterials( materials );
+    objLoader2.setPath( 'assets/models/' );
+    objLoader2.load( 'house2.obj', function ( object ) {
+
+        
+       
+        object.traverse( function ( child ) {
+
+            if ( child instanceof THREE.Mesh ) {
+                child.material.color = new THREE.Color('rgb(219,219,219)'); 
+                child.material.transparent = true;
+                child.material.opacity = 0.3; 
+                scene3.add(child);
+                var edges = new THREE.EdgesGeometry( child.geometry );
+                var line = new THREE.LineSegments( edges, new THREE.LineBasicMaterial( { color: new THREE.Color('rgb(0,0,0)') } ) );
+                line.material.linewidth = 5;
+                child.add( line );
+            }
+        } );
+
+    });
+
+});
 
 renderDiv3.addEventListener('mouseover', mouseOver3);
 renderDiv3.addEventListener('mouseleave', mouseLeave3);
