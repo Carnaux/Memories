@@ -15,7 +15,7 @@ function changeLan(n){
         
     }else if(n == 2){
         document.getElementById("titleText").innerHTML = "Memori<span>a</span>s";
-        document.getElementById("textDescription").innerText = " I draw the architecture from my childhood houses,\r\n based only in memories and from that i made the 3D models";
+        document.getElementById("textDescription").innerText = "I drew the architecture of my childhood homes, \r\n based only on memories and from that I made the 3D models";
         document.getElementById("beginBT").textContent = "Begin";
         document.getElementById("letterE").style.display = "block";
         document.getElementById("letterE").style.position = "relative";
